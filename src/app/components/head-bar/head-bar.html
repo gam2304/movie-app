@@ -1,6 +1,6 @@
-<div class="container">
-    <h1>My Movie-DB</h1>
-    <button>
-        Wish List <fa-icon [icon]="faHeart" />
-    </button>
-</div>
+<header class="bar">
+  <a routerLink="/" class="brand">My Movie-DB</a>
+  <button class="wishlist-button" (click)="navigateToWishList()">
+    <fa-icon [icon]="faHeart" /> Wishlist
+  </button>
+</header>

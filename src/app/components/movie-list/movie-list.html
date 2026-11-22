@@ -1,12 +1,13 @@
-<div class="container">
-    @for (movie of movieService.movieList; track movie.id) {
-        <div class="movie-card">
-            <div>
-                <img [src]="`https://image.tmdb.org/t/p/original/${movie.poster_path}`" [alt]="movie.title">
-            </div>
-            <div class="movie-detail">
-                <h2>{{movie.title}}</h2>
-            </div>
-        </div>
-    }
+<div class="movie-grid">
+  @for (movie of movieService.movieList(); track movie.id) {
+    <div class="movie-card" (click)="navigateTo(movie)">
+      <img [src]="`https://image.tmdb.org/t/p/w342${movie.poster_path}`" [alt]="movie.title" />
+      <h2 class="movie-title">{{ movie.title }}</h2>
+      <p class="movie-info">
+        {{ movie.release_date.slice(0, 4) }}
+      </p>
+    </div>
+  } @empty {
+    <p class="empty">No films match this title</p>
+  }
 </div>

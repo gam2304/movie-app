@@ -1,0 +1,18 @@
+/* Colors used in the app:
+   #0f0f10  page background (almost black)
+   #18181a  boxes and inputs
+   #222225  hover background
+   #2a2a2e  borders
+   #ededf0  main text (almost white)
+   #a1a1a8  secondary text (light grey)
+   #6e6e76  small, quiet text (grey)
+   #f2b705  yellow accent (ratings, main button) */
+
+/* Wraps the whole app: dark background and default text style */
+.app {
+  min-height: 100vh;
+  background-color: #0f0f10;
+  color: #ededf0;
+  font-family: system-ui, sans-serif;
+  font-size: 15px;
+}

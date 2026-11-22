@@ -1,34 +1,62 @@
-.container {
+/* Remove the browser's default spacing */
+h1, h2, p {
+  margin: 0;
+}
 
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
+
+.movie-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px 20px;
+  padding: 24px 32px 64px;
 }
 
 .movie-card {
-    width: 230px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    margin-bottom: 20px;
+  width: 180px;
+  cursor: pointer;
 }
 
 .movie-card img {
-    width: 100%;
-    height: auto;
-    display: block;
+  display: block;
+  width: 180px;
+  height: 270px;
+  object-fit: cover;
+  border-radius: 8px;
+  background-color: #18181a;
 }
-.movie-card h2 {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 1.2em;
-    margin: 10px 0;
-    text-align: center;
+
+.movie-card:hover img {
+  opacity: 0.85;
 }
-.movie-card :hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+.movie-title {
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 12px;
+}
+
+.movie-info {
+  font-size: 12px;
+  color: #6e6e76;
+  margin-top: 4px;
+}
+
+.empty {
+  color: #a1a1a8;
+}
+
+/* Phones */
+@media (max-width: 640px) {
+  .movie-grid {
+    padding: 16px;
+  }
+
+  .movie-card,
+  .movie-card img {
+    width: 150px;
+  }
+
+  .movie-card img {
+    height: 225px;
+  }
 }

@@ -1,0 +1,71 @@
+/* Remove the browser's default spacing */
+h1, h2, p {
+  margin: 0;
+}
+
+.page {
+  padding: 24px 32px 64px;
+}
+
+.page-title {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+/* Cards sit side by side and wrap to a new line when there is no more room */
+.movie-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px 20px;
+}
+
+.movie-card {
+  width: 180px;
+  cursor: pointer;
+}
+
+.movie-card img {
+  display: block;
+  width: 180px;
+  height: 270px;
+  object-fit: cover;
+  border-radius: 8px;
+  background-color: #18181a;
+}
+
+.movie-card:hover img {
+  opacity: 0.85;
+}
+
+.movie-title {
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 12px;
+}
+
+.movie-info {
+  font-size: 12px;
+  color: #6e6e76;
+  margin-top: 4px;
+}
+
+.empty {
+  color: #a1a1a8;
+}
+
+/* Phones */
+@media (max-width: 640px) {
+  .page {
+    padding: 16px;
+  }
+
+  .movie-card,
+  .movie-card img {
+    width: 150px;
+  }
+
+  .movie-card img {
+    height: 225px;
+  }
+}

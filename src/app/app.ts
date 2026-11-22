@@ -5,7 +5,7 @@ import { SearchBar } from './components/search-bar/search-bar';
 import { MovieList } from './components/movie-list/movie-list';
 
 @Component({
-  imports: [HeadBar, SearchBar, MovieList],
+  imports: [HeadBar, SearchBar, MovieList, RouterOutlet],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',

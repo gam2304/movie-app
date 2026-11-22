@@ -1,1 +1,43 @@
-<p>movie-detail works!</p>
+@if (movieService.selectedMovie(); as movie) {
+  <main class="container">
+    <img
+      class="poster"
+      [src]="`https://image.tmdb.org/t/p/w500${movie.poster_path}`"
+      [alt]="movie.title"
+    />
+
+    <div class="info">
+      <h1>{{ movie.title }}</h1>
+
+      <div class="facts">
+        <div>
+          <p class="label">Original title</p>
+          <p>{{ movie.original_title }}</p>
+        </div>
+        <div>
+          <p class="label">Original language</p>
+          <p>{{ movie.original_language }}</p>
+        </div>
+        <div>
+          <p class="label">Release date</p>
+          <p>{{ movie.release_date | date: 'd MMM y' }}</p>
+        </div>
+        <div>
+          <p class="label">Vote average</p>
+          <p class="rating">{{ movie.vote_average | number: '1.1-1' }} / 10</p>
+        </div>
+        <div>
+          <p class="label">Vote count</p>
+          <p>{{ movie.vote_count }}</p>
+        </div>
+      </div>
+
+      <p class="overview">{{ movie.overview }}</p>
+
+      <div class="buttons">
+        <button class="button-yellow" (click)="addToWishList()">Add to wishlist</button>
+        <button class="button-grey" (click)="backToMovieList()">Back to movies</button>
+      </div>
+    </div>
+  </main>
+}

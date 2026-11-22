@@ -1,1 +1,17 @@
-<p>wish-list works!</p>
+<main class="page">
+  <h1 class="page-title">Wishlist</h1>
+
+  <div class="movie-grid">
+    @for (movie of movieService.wishList(); track movie.id) {
+      <div class="movie-card" (click)="navigateTo(movie.id)">
+        <img [src]="`https://image.tmdb.org/t/p/w342${movie.poster_path}`" [alt]="movie.title" />
+        <h2 class="movie-title">{{ movie.title }}</h2>
+        <p class="movie-info">
+          {{ movie.release_date.slice(0, 4) }}
+        </p>
+      </div>
+    } @empty {
+      <p class="empty">Your wishlist is empty. Open a film and click "Add to wishlist".</p>
+    }
+  </div>
+</main>
